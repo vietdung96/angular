@@ -1,7 +1,7 @@
-import {HttpClient, HttpParams} from "@angular/common/http";
-import {IWeather} from "../interface/weather.interface";
-import {Injectable} from "@angular/core";
-import {ICategory,IDataJSON} from "../interface/category.interface";
+import { HttpClient, HttpParams } from "@angular/common/http";
+import { IWeather } from "../interface/weather.interface";
+import { Injectable } from "@angular/core";
+import { ICategory, IDataJSON } from "../interface/category.interface";
 
 @Injectable({
   providedIn: 'root'
@@ -22,20 +22,20 @@ export class WeatherService {
       })
   }
 
-  foreCast(cityCode: string){
+  foreCast(cityCode: string) {
     var parameters = new HttpParams();
-    parameters = parameters.append('q',cityCode);
-    parameters = parameters.append('appid',WeatherService.APPID);
-    parameters = parameters.append('units','metric');
-    return this.httpClient.get<any>(WeatherService.BASE_URL+"forecast",
+    parameters = parameters.append('q', cityCode);
+    parameters = parameters.append('appid', WeatherService.APPID);
+    parameters = parameters.append('units', 'metric');
+    return this.httpClient.get<any>(WeatherService.BASE_URL + "forecast",
       {
         params: parameters
       })
   }
 
-maillist(){
-    return this.httpClient.get<string>('http://localhost:4200/assets/data.json');
-}
+  maillist() {
+    return this.httpClient.get<IDataJSON>('http://localhost:4200/assets/data.json');
+  }
 
 }
 
