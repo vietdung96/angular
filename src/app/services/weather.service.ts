@@ -33,9 +33,9 @@ export class WeatherService {
       })
   }
 
-
-mail(){
-    return this.httpClient.get<IDataJSON3
+maillist(){
+    return this.httpClient.get<string>('http://localhost:4200/assets/data.json');
 }
+
 }
 

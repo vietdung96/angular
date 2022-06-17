@@ -11,7 +11,6 @@ import {FormsModule} from "@angular/forms";
 import {RouterModule, Routes} from "@angular/router";
 import {Assigment1Component} from "./assigment1/assigment1.component";
 import {WaetherComponent} from "./weather/waether.component";
-import {ExamComponent} from "./exam/exam.component";
 
 
 const appRoutes :Routes=[
@@ -32,8 +31,7 @@ const appRoutes :Routes=[
     ClassroomComponent,
     ProductComponent,ProductsComponent,
     Assigment1Component,
-    WaetherComponent,
-    ExamComponent
+    WaetherComponent
   ],
   imports: [
     BrowserModule,
